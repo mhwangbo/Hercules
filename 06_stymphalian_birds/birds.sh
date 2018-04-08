@@ -1,9 +1,8 @@
 #!/bin/bash
 
-clear
-echo "If you need help, please write -h  instead of project name when operating a shell file"
 if [ "$1" = "-h" ] || [ "$2" = "-h" ]
 then
+	clear
 	echo "					Welcome! 👋"
 	echo "	This script is made to help you when you start a new project."
 	echo "	Script creates the folder stucture, makefile (basic flags: "
@@ -11,8 +10,14 @@ then
 	echo "	sh birds.sh PROJECT_NAME will create a new folder with your project"
 	echo ""
 	exit
+elif [ "$#" != 1 ]
+then
+	echo "usage: sh birds.sh [project name]"
+	exit
 fi
 
+clear
+echo "If you need help, please write -h  instead of project name when operating a shell file"
 echo "Is this a C Project? (y \\ n): "
 read C_project
 clear
@@ -33,7 +38,7 @@ then
 
 	if [ $author = "y" ]
 	then
-		echo "$USER"	> author
+		echo "$USER"	> $1/author
 	
 	elif [ "$author" != "y" ] && [ "$author" != "n" ]
 	then

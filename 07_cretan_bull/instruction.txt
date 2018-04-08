@@ -1,0 +1,18 @@
+명령어			용례					사용법							설명
+
+lfork			
+sti (11)		sti r1,\%:live,\%1		registry, index1, index2		i1과 i2를 더한 결과를 r을 복사할 곳의  주소값으로
+fork (0x0c)		
+lld (13)		
+ld (10)			
+add (4)			
+zjump (9)		zjmp \%:live			index							index로 이동/점프
+sub (0b101)		
+ldi (0x0a)		
+or (7)			
+st (0x03)		
+aff (10)		
+live (0x01)		live \%1				
+xor (octal 10)	
+lldi (0x0e)		
+and (0x06)		and r1,\%0,r1			argument1, argument2, reg		argument 둘에 & (bit-to-bit AND) 적용 및 reg에 저장
